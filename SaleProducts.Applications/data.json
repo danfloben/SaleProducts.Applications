@@ -1,0 +1,35 @@
+{
+  "venta": {
+    "numero": "12345",
+    "fecha": "2023-10-26",
+    "cliente": {
+      "nombre": "Juan Perez",
+      "direccion": "Calle Principal 123",
+      "telefono": "555-1234"
+    }
+  },
+  "productos": [
+    {
+      "codigo": "P001",
+      "nombre": "Producto 1",
+      "precio_unitario": 20.5,
+      "cantidad": 2,
+      "subtotal": 41.0
+    },
+    {
+      "codigo": "P002",
+      "nombre": "Producto 2",
+      "precio_unitario": 15.75,
+      "cantidad": 3,
+      "subtotal": 47.25
+    },
+    {
+      "codigo": "P003",
+      "nombre": "Producto 3",
+      "precio_unitario": 10.0,
+      "cantidad": 5,
+      "subtotal": 50.0
+    }
+  ],
+  "total": 138.25
+}

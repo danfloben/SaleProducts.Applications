@@ -1,0 +1,15 @@
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\bin\Debug\net6.0\SaleProducts.Business.deps.json
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\bin\Debug\net6.0\SaleProducts.Business.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\bin\Debug\net6.0\SaleProducts.Business.pdb
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\bin\Debug\net6.0\SaleProducts.Data.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\bin\Debug\net6.0\SaleProducts.Data.pdb
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.csproj.AssemblyReference.cache
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.AssemblyInfoInputs.cache
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.AssemblyInfo.cs
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.csproj.CoreCompileInputs.cache
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.csproj.CopyComplete
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\refint\SaleProducts.Business.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\SaleProducts.Business.pdb
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Business\obj\Debug\net6.0\ref\SaleProducts.Business.dll

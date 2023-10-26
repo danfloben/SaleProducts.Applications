@@ -1,0 +1,11 @@
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\bin\Debug\net6.0\SaleProducts.Tests.deps.json
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\bin\Debug\net6.0\SaleProducts.Tests.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\bin\Debug\net6.0\SaleProducts.Tests.pdb
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\SaleProducts.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\SaleProducts.Tests.AssemblyInfoInputs.cache
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\SaleProducts.Tests.AssemblyInfo.cs
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\SaleProducts.Tests.csproj.CoreCompileInputs.cache
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\SaleProducts.Tests.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\refint\SaleProducts.Tests.dll
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\SaleProducts.Tests.pdb
+C:\Users\danfl\Desktop\SaleProducts.Applications\SaleProducts.Tests\obj\Debug\net6.0\ref\SaleProducts.Tests.dll
