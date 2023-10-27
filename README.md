@@ -1,6 +1,6 @@
 # SaleProducts.Applications
 
-Guide to Clone, Compile, and Run a .NET Core Web API Project AgencyApp
+Guide to Clone, Compile, and Run a .NET 6 Web 
 
 ## Cloning the Project
 1. Clone the project repository from GitHub or another remote repository.
