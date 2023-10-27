@@ -1,10 +1,10 @@
-﻿using AgencyApp.Business.Services;
-using AgencyApp.Business.Services.interfaces;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using AgencyApp.Business.Services;
 using AgencyApp.Data.Context;
 using AgencyApp.Data.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using AgencyApp.Business.Services.interfaces;
 
 internal class Program
 {
@@ -16,7 +16,7 @@ internal class Program
 
     private static string ReadDataToJson()
     {
-        string? data = null;
+        string data = string.Empty;
 
         try
         {
@@ -27,7 +27,7 @@ internal class Program
         }
         catch (IOException ex)
         {
-            Console.WriteLine("Error reading data.json: " + ex.Message);
+            Console.WriteLine($"Error reading data.json: {ex.Message}");
         }
 
         return data;
@@ -35,23 +35,20 @@ internal class Program
 
     private static ServiceProvider ConfigureServices()
     {
-
+        // Configuración de servicios y DI
         var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-  
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
         var serviceProvider = new ServiceCollection()
-                .AddSingleton<ISaleRepository, SaleRepository>()
-                .AddSingleton<ISaleServices, SaleServices>()
-                .AddSingleton<IConfiguration>(configuration)
-                .AddDbContext<AppDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
-                .BuildServiceProvider();
+            .AddSingleton<ISaleRepository, SaleRepository>()
+            .AddSingleton<ISaleServices, SaleServices>()
+            .AddSingleton<IConfiguration>(configuration)
+            .AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
+            .BuildServiceProvider();
 
         return serviceProvider;
     }
-
 }
-
-

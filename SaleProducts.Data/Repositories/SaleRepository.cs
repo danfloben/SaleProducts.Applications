@@ -1,7 +1,6 @@
 ﻿using AgencyApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using SaleProducts.Data.DTO;
-using SaleProducts.Data.Models;
 
 namespace AgencyApp.Data.Repositories
 {
@@ -14,27 +13,26 @@ namespace AgencyApp.Data.Repositories
         }
         public async Task<SaleDTO> Create(SaleDTO saleDTO)
         {
-            try
+            using (var transaction = _appDbContext.Database.BeginTransaction())
             {
-                _appDbContext.Customers.Add(saleDTO.Sale.Customer);
-
-                _appDbContext.SaveChanges();
-                saleDTO.Sale.Customer = saleDTO.Sale.Customer;
-                _appDbContext.Sales.Add(saleDTO.Sale);
-                _appDbContext.SaveChanges();
-                foreach (var product in saleDTO.Products)
+                try
                 {
-                    product.Sale = saleDTO.Sale;
-                }
-                _appDbContext.Products.AddRange(saleDTO.Products);
-                _appDbContext.SaveChanges();
+                    _appDbContext.Customers.Add(saleDTO.Sale.Customer);
+                    _appDbContext.Sales.Add(saleDTO.Sale);
+                    saleDTO.Products.ForEach(product => product.Sale = saleDTO.Sale);
+                    _appDbContext.Products.AddRange(saleDTO.Products);
 
+                    _appDbContext.SaveChanges();
+
+                    transaction.Commit();
+                }
+                catch (DbUpdateException ex)
+                {
+                    transaction.Rollback();
+                    Console.WriteLine("Error in SaleRepository: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error in SaleRepository: " + ex.Message);
-            }
-            
+
             return saleDTO;
         }
     }
