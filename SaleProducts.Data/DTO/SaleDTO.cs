@@ -9,7 +9,7 @@ namespace SaleProducts.Data.DTO
         public Sale Sale { get; set; }
 
         [JsonProperty(PropertyName = "productos")]
-        public List<Product> products { get; set; }
+        public List<Product> Products { get; set; }
 
         [JsonProperty(PropertyName = "total")]
         public decimal Total { get; set; }

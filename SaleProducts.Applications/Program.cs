@@ -5,16 +5,13 @@ using AgencyApp.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Text.Json;
-using System;
-using SaleProducts.Data.Models;
 
 internal class Program
 {
     static void Main(string[] args)
     {
         var saleService = ConfigureServices().GetRequiredService<ISaleServices>();
-        saleService.CreateAsync(ReadDataToJson());
+        saleService.Create(ReadDataToJson());
     }
 
     private static string ReadDataToJson()
@@ -47,8 +44,9 @@ internal class Program
         var serviceProvider = new ServiceCollection()
                 .AddSingleton<ISaleRepository, SaleRepository>()
                 .AddSingleton<ISaleServices, SaleServices>()
+                .AddSingleton<IConfiguration>(configuration)
                 .AddDbContext<AppDbContext>(options =>
-                    options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
+                    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
                 .BuildServiceProvider();
 
         return serviceProvider;

@@ -21,5 +21,7 @@ namespace SaleProducts.Data.Models
 
         [JsonProperty(PropertyName = "subtotal")]
         public decimal Subtotal { get; set; }
+
+        public Sale? Sale { get; set; }
     }
 }

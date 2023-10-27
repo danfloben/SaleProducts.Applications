@@ -2,6 +2,6 @@
 {
     public interface ISaleServices
     {
-        bool CreateAsync(string dataJson);
+        bool Create(string dataJson);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AgencyApp.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using SaleProducts.Data.DTO;
 using SaleProducts.Data.Models;
 
@@ -9,12 +10,31 @@ namespace AgencyApp.Data.Repositories
         private readonly AppDbContext _appDbContext;
         public SaleRepository(AppDbContext appDbContext)
         {
-            this._appDbContext = appDbContext;
+            _appDbContext = appDbContext;
         }
         public async Task<SaleDTO> Create(SaleDTO saleDTO)
         {
-            await _appDbContext.Set<Sale>().AddAsync(saleDTO.Sale);
-            await _appDbContext.SaveChangesAsync();
+            try
+            {
+                _appDbContext.Customers.Add(saleDTO.Sale.Customer);
+
+                _appDbContext.SaveChanges();
+                saleDTO.Sale.Customer = saleDTO.Sale.Customer;
+                _appDbContext.Sales.Add(saleDTO.Sale);
+                _appDbContext.SaveChanges();
+                foreach (var product in saleDTO.Products)
+                {
+                    product.Sale = saleDTO.Sale;
+                }
+                _appDbContext.Products.AddRange(saleDTO.Products);
+                _appDbContext.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in SaleRepository: " + ex.Message);
+            }
+            
             return saleDTO;
         }
     }

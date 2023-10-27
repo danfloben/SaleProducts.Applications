@@ -13,6 +13,5 @@ namespace SaleProducts.Data.Models
 
         [JsonProperty(PropertyName = "cliente")]
         public Customer? Customer { get; set; }
-
     }
 }

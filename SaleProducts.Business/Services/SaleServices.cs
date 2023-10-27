@@ -2,8 +2,6 @@
 using AgencyApp.Data.Repositories;
 using Newtonsoft.Json;
 using SaleProducts.Data.DTO;
-using SaleProducts.Data.Models;
-using System;
 
 namespace AgencyApp.Business.Services
 {
@@ -14,7 +12,7 @@ namespace AgencyApp.Business.Services
         {
             _repository = repository;
         }
-        public bool CreateAsync(string dataJson)
+        public bool Create(string dataJson) 
         {
             var saleDTO = JsonConvert.DeserializeObject<SaleDTO>(dataJson);
             if (_repository.Create(saleDTO) != null)
